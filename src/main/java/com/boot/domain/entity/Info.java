@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "info")
-public class Info implements Cloneable<Info>{
+public class Info{
     private int id;
     private String name;
     private Integer age;
@@ -65,13 +65,5 @@ public class Info implements Cloneable<Info>{
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + (age != null ? age.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public Info clone() {
-        Info info=new Info();
-        info.setAge(this.age);
-        info.setName(this.name);
-        return info;
     }
 }
